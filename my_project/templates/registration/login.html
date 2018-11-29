@@ -1,0 +1,22 @@
+<!-- templates/registration/login.html -->
+{% extends 'base.html' %}
+
+{% load static %}
+
+
+{% block title %}Login{% endblock %}
+
+{% block references %}
+<link rel="stylesheet" type="text/css" href="{%static 'css/login.css' %}" />
+{% endblock %}
+
+{% block content %}
+<h2 class=login>Login</h2>
+<form method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button class=login type="submit">Login</button>
+</form>
+<a class=login id='signup' href="../../accounts/signup/">Sign Up</a>
+<br><a class=login id='forgotpass' href="../../my_project/password_reset/">Forgot Password?</a>
+{% endblock %}
